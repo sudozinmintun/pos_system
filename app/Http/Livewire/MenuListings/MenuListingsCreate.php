@@ -21,7 +21,7 @@ class MenuListingsCreate extends Component
 
     public function render()
     {
-        $this->main_categories = MainCategory::all();
+        $this->main_categories = MainCategory::get()->where('type_of_category', 'main_category');
         return view('livewire.menu-listings.menu-listings-create');
     }
 

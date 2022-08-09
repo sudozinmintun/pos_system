@@ -1,25 +1,26 @@
 <?php
 
-namespace App\Http\Livewire\MainCategory;
+namespace App\Http\Livewire\Ingredients;
 
 use App\Models\Models\MainCategory as ModelsMainCategory;
 use App\Models\Models\MainGroup;
 use Livewire\Component;
 
-class MainCategory extends Component
+class Ingredients extends Component
 {
     public $main_groups;
     public $main_categories;
-    public $main_categorie_id, $title, $unit,  $main_group_id;
-    public $type_of_category = 'main_category';
+    public $main_categorie_id, $title, $unit;
+    public $type_of_category = 'ingredients';
+    public $main_group_id = 0;
     public $updateMode = false;
     public $createMode = false;
 
     public function render()
     {
         $this->main_groups = MainGroup::all();
-        $this->main_categories = ModelsMainCategory::get()->where('type_of_category', 'main_category');
-        return view('livewire.main-category.main-category');
+        $this->main_categories = ModelsMainCategory::get()->where('type_of_category', 'ingredients');
+        return view('livewire.ingredients.ingredients');
     }
 
     /**
@@ -31,7 +32,6 @@ class MainCategory extends Component
     {
         $this->title = '';
         $this->unit = '';
-        $this->main_group_id = '';
         $this->main_categorie_id = '';
     }
 
@@ -100,7 +100,6 @@ class MainCategory extends Component
         $validatedDate = $this->validate([
             'title' => 'required',
             'unit' => 'required',
-            'main_group_id' => 'required',
             'main_categorie_id' => 'required',
         ]);
 

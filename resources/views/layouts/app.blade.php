@@ -67,7 +67,7 @@
     <script src="{{ asset('assets/plugins/chartjs/js/Chart.min.js') }}"></script>
     <script src="{{ asset('assets/plugins/chartjs/js/Chart.extension.js') }}"></script>
     <script src="{{ asset('assets/plugins/jquery.easy-pie-chart/jquery.easypiechart.min.js') }}"></script>
-    <script src="{{ asset('assets/js/index.js') }}"></script>
+    {{-- <script src="{{ asset('assets/js/index.js') }}"></script> --}}
     <script src="{{ asset('assets/plugins/datatable/js/jquery.dataTables.min.js') }}"></script>
     <script src="{{ asset('assets/plugins/datatable/js/dataTables.bootstrap5.min.js') }}"></script>
 

@@ -17,7 +17,8 @@ class MainCategory extends Model
     protected $fillable = [
         'title',
         'unit',
-        'main_group_id'
+        'main_group_id',
+        'type_of_category',
     ];
 
     public function main_groups_table()

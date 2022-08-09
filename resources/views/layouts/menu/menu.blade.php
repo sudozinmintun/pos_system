@@ -51,7 +51,7 @@
         </li>
 
         <li>
-            <a href="#">
+            <a href="{{ route('menu_stock') }}">
                 <div class="parent-icon">
                     <i class='bx bx-home-circle'></i>
                 </div>
@@ -156,7 +156,7 @@
                     <i class="bx bx-category"></i>
                 </div>
                 <div class="menu-title">
-                    Menu Config
+                    Configuration
                 </div>
             </a>
             <ul>
@@ -172,6 +172,13 @@
                     <a href="{{ route('main_category') }}">
                         <i class="bx bx-right-arrow-alt"></i>
                         Main Category
+                    </a>
+                </li>
+
+                <li>
+                    <a href="{{ route('ingredients') }}">
+                        <i class="bx bx-right-arrow-alt"></i>
+                        Ingredients
                     </a>
                 </li>
 

@@ -26,43 +26,91 @@
             </div>
         </div>
 
-        @foreach ($main_categories as $key => $main_categorie)
-            <h6 class="mb-0 text-uppercase">
-                {{ $main_categorie->title ?? '' }}
-            </h6>
-            <hr />
-            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 row-cols-xl-4">
-                @foreach ($main_categorie->sub_groups_table as $sub_groups)
-                    <div class="col-md-3 col-lg-3 col-sm-6">
-                        <div class="card border-primary border-bottom border-3 border-0">
-                            @if ($sub_groups->photo)
-                                <img src="{{ Storage::url($sub_groups->photo) }}" class="card-img-top" alt="..."
-                                    style="object-fit: contain; width: 100%; height: 150px;">
-                            @else
-                                <img src="{{ asset('images/1.png') }}" class="card-img-top" alt="..."
-                                    style="object-fit: contain; width: 100%; height: 150px;">
-                            @endif
-                            <div class="card-body">
-                                <h5 class="card-title text-primary">
-                                    {{ $sub_groups->title ?? '' }}
-                                </h5>
-                                <hr>
-                                <div class="d-flex align-items-center gap-2">
-                                    <a href="javascript:;" class="btn btn-inverse-primary btn-sm">
-                                        <i class='bx bx-edit'></i>
-                                        Edit
-                                    </a>
-                                    <a href="javascript:;" class="btn btn-danger btn-sm">
-                                        <i class='bx bx-trash'></i>
-                                        Delete
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                @endforeach
-            </div>
-        @endforeach
 
+        <div class="col">
+            <hr />
+            <div class="card">
+                <h5 class="card-header">
+                    Main Group
+                </h5>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead class="table-light">
+                                <tr>
+                                    <th style="background-color: #0C6CF4; text-align: center; color: white; width: 1%;">
+                                        No</th>
+                                    <th style="background-color: #0C6CF4; text-align: center; color: white; width: 30%">
+                                        Main Group
+                                    </th>
+                                    <th style="background-color: #0C6CF4; text-align: center; color: white; width: 30%">
+                                        Sub Group
+                                    </th>
+                                    <th style="background-color: #0C6CF4; text-align: center; color: white; width: 30%">
+                                        Actions
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody class="table-border-bottom-0">
+                                @foreach ($main_categories as $key => $main_categorie)
+                                    <tr style="background-color: #fafafa">
+                                        <td>
+                                            {{ $key + 1 }}
+                                        </td>
+                                        <td colspan="2" style="font-weight: bold">
+                                            {{ $main_categorie->title ?? '' }}
+                                        </td>
+                                        <td style="text-align: center">
+                                            <a href="">
+                                                <span class="badge bg-primary">
+                                                    Edit
+                                                </span>
+                                            </a>
+                                            <a href="">
+                                                <span class="badge bg-danger">
+                                                    Delete
+                                                </span>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    @foreach ($main_categorie->sub_groups_table as $sub_groups)
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td>
+                                                {{ $sub_groups->title ?? '' }}
+                                            </td>
+                                            <td style="text-align: center">
+
+                                                <a href="{{ route('manage_ingredients', ['id' => $sub_groups->id]) }}">
+                                                    <span class="badge bg-warning">
+                                                        Ingredients
+                                                    </span>
+                                                </a>
+
+                                                <a href="">
+                                                    <span class="badge bg-primary">
+                                                        Edit
+                                                    </span>
+                                                </a>
+
+                                                <a href="">
+                                                    <span class="badge bg-danger">
+                                                        Delete
+                                                    </span>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                    <tr style="background-color: #418107;">
+                                        <td colspan="4"></td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>

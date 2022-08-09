@@ -1,17 +1,14 @@
 <form>
     <div class="input-group">
-        <select class="form-control" wire:model.debounce.800ms="main_group_id">
+        <input type="hidden" wire:model="main_group_id" required>
+
+        <select class="form-control" wire:model.debounce.800ms="category">
             <option value="">--Select Category--</option>
-            @foreach ($main_groups as $main_group)
-                <option value="{{ $main_group->id ?? 0 }}">
-                    {{ $main_group->title ?? '' }}
-                </option>
-            @endforeach
+            <option value="Food">Food</option>
+            <option value="Bar">Bar</option>
         </select>
 
         <input type="text" class="form-control" wire:model="title" placeholder="Title">
-
-        <input type="text" class="form-control" wire:model="unit" placeholder="Unit">
 
         <button class="btn btn-success" type="submit" wire:click.prevent="update()">
             Save

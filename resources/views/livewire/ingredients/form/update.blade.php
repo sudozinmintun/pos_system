@@ -1,13 +1,5 @@
 <form>
     <div class="input-group">
-        <select class="form-control" wire:model.debounce.800ms="main_group_id">
-            <option value="">--Select Category--</option>
-            @foreach ($main_groups as $main_group)
-                <option value="{{ $main_group->id ?? 0 }}">
-                    {{ $main_group->title ?? '' }}
-                </option>
-            @endforeach
-        </select>
 
         <input type="text" class="form-control" wire:model="title" placeholder="Title">
 
