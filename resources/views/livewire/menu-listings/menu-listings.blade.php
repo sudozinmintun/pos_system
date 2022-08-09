@@ -46,7 +46,10 @@
                                     <th style="background-color: #0C6CF4; text-align: center; color: white; width: 30%">
                                         Sub Group
                                     </th>
-                                    <th style="background-color: #0C6CF4; text-align: center; color: white; width: 30%">
+                                    <th style="background-color: #0C6CF4; text-align: center; color: white; width: 15%">
+                                        Sales Price
+                                    </th>
+                                    <th style="background-color: #0C6CF4; text-align: center; color: white; width: 15%">
                                         Actions
                                     </th>
                                 </tr>
@@ -60,6 +63,7 @@
                                         <td colspan="2" style="font-weight: bold">
                                             {{ $main_categorie->title ?? '' }}
                                         </td>
+                                        <td></td>
                                         <td style="text-align: center">
                                             <a href="">
                                                 <span class="badge bg-primary">
@@ -80,6 +84,11 @@
                                             <td>
                                                 {{ $sub_groups->title ?? '' }}
                                             </td>
+
+                                            <td style="text-align: right;">
+                                                {{ number_format($sub_groups->sales_price, 2) }}
+                                            </td>
+
                                             <td style="text-align: center">
 
                                                 <a href="{{ route('manage_ingredients', ['id' => $sub_groups->id]) }}">
@@ -103,7 +112,7 @@
                                         </tr>
                                     @endforeach
                                     <tr style="background-color: #418107;">
-                                        <td colspan="4"></td>
+                                        <td colspan="5"></td>
                                     </tr>
                                 @endforeach
                             </tbody>

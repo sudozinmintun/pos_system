@@ -12,6 +12,10 @@
 
     <ul class="metismenu" id="menu">
 
+        <li class="menu-label">
+            Admin
+        </li>
+
         <li>
             <a href="{{ route('dashboard') }}">
                 <div class="parent-icon">
@@ -22,7 +26,6 @@
                 </div>
             </a>
         </li>
-
 
         <li>
             <a href="javascript:;" class="has-arrow">
@@ -83,7 +86,6 @@
             </a>
         </li>
 
-
         <li>
             <a href="javascript:;" class="has-arrow">
                 <div class="parent-icon">
@@ -119,32 +121,6 @@
                     <a href="#">
                         <i class="bx bx-right-arrow-alt"></i>
                         Profit Report
-                    </a>
-                </li>
-            </ul>
-        </li>
-
-        <li>
-            <a href="javascript:;" class="has-arrow">
-                <div class="parent-icon">
-                    <i class="bx bx-category"></i>
-                </div>
-                <div class="menu-title">
-                    Ingredients
-                </div>
-            </a>
-            <ul>
-                <li>
-                    <a href="#">
-                        <i class="bx bx-right-arrow-alt"></i>
-                        Ingredients
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#">
-                        <i class="bx bx-right-arrow-alt"></i>
-                        Sub Category
                     </a>
                 </li>
             </ul>
@@ -225,16 +201,30 @@
             </ul>
         </li>
 
-        <li>
-            <form method="POST" action="{{ route('logout') }}">
-                @csrf
+        <li class="menu-label">
+            POS System
+        </li>
 
-                <a href="route('logout')"
-                    onclick="event.preventDefault();
-                                        this.closest('form').submit();">
-                    {{ __('Log Out') }}
-                </a>
-            </form>
+        <li>
+            <a href="{{ route('customer_order') }}">
+                <div class="parent-icon">
+                    <i class='bx bx-user-check'></i>
+                </div>
+                <div class="menu-title">
+                    Customer Order
+                </div>
+            </a>
+        </li>
+
+        <li>
+            <a href="#">
+                <div class="parent-icon">
+                    <i class='bx bx-history'></i>
+                </div>
+                <div class="menu-title">
+                    Order History
+                </div>
+            </a>
         </li>
     </ul>
 </div>

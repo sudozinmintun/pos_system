@@ -111,6 +111,7 @@
         window.livewire.start()
     });
 </script>
+
 </body>
 
 </html>

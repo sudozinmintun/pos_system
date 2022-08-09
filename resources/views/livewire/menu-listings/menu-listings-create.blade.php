@@ -56,6 +56,18 @@
 
                             <div class="row mb-3">
                                 <label for="inputEnterYourName" class="col-sm-3 col-form-label">
+                                    Sales Price
+                                </label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" wire:model="sales_price">
+                                    @error('sales_price')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <label for="inputEnterYourName" class="col-sm-3 col-form-label">
                                     Photo
                                 </label>
                                 <div class="col-sm-9">

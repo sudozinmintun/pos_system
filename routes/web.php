@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Livewire\CustomerOrder\CustomerOrder;
 use App\Http\Livewire\Dashboard;
 use App\Http\Livewire\Ingredients\Ingredients;
 use App\Http\Livewire\MainCategory\MainCategory;
@@ -28,6 +29,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/menu-listings-create', MenuListingsCreate::class)->name('menu_listings_create');
     Route::get('/ingredients', Ingredients::class)->name('ingredients');
     Route::get('/manage-ingredients/{id}', array('as' => 'manage_ingredients', 'uses' => ManageIngredients::class));
+    Route::get('/customer_order', CustomerOrder::class)->name('customer_order');
     Route::get('/menu-stock', MenuStock::class)->name('menu_stock');
 });
 
