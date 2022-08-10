@@ -65,7 +65,7 @@
         </li>
 
         <li>
-            <a href="#">
+            <a href="{{ route('counter_checkout') }}">
                 <div class="parent-icon">
                     <i class='bx bx-home-circle'></i>
                 </div>

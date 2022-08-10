@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Livewire\Checkout\CounterCheckout;
 use App\Http\Livewire\CustomerOrder\CustomerOrder;
 use App\Http\Livewire\Dashboard;
 use App\Http\Livewire\Ingredients\Ingredients;
@@ -30,6 +31,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/ingredients', Ingredients::class)->name('ingredients');
     Route::get('/manage-ingredients/{id}', array('as' => 'manage_ingredients', 'uses' => ManageIngredients::class));
     Route::get('/customer_order', CustomerOrder::class)->name('customer_order');
+    Route::get('/counter_checkout', CounterCheckout::class)->name('counter_checkout');
     Route::get('/menu-stock', MenuStock::class)->name('menu_stock');
 });
 
